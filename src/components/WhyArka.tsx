@@ -1,8 +1,10 @@
+import { ARKA_GOALS_VIDEO } from "@/lib/constants";
+
 const benefits = [
   {
     title: "Multiple BTC Pockets",
     description:
-      "Rent, emergency fund, travel, wedding—create a dedicated pocket for each goal and DCA IDR into BTC per pocket.",
+      "Housing, wedding, retirement, travel—create a dedicated pocket for each goal and DCA IDR into BTC per pocket.",
     icon: "🎯",
   },
   {
@@ -36,6 +38,24 @@ export function WhyArka() {
           DCA your IDR into Bitcoin for every savings goal. Built for Indonesian
           savers who want a modern, app-first approach.
         </p>
+        <div className="mt-12 flex justify-center">
+          <div className="w-full max-w-xl">
+            <video
+              src={ARKA_GOALS_VIDEO}
+              className="w-full rounded-2xl border border-gray-200 shadow-lg"
+              autoPlay
+              playsInline
+              muted
+              loop
+              controls
+            >
+              <track kind="captions" />
+            </video>
+            <p className="mt-3 text-center text-sm text-gray-600">
+              Housing, wedding, retirement—create pockets for every goal.
+            </p>
+          </div>
+        </div>
         <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {benefits.map((benefit) => (
             <div
