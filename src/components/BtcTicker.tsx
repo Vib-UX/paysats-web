@@ -53,14 +53,14 @@ export function BtcTicker() {
   const isUp = data.change24h >= 0;
 
   return (
-    <div
-      className="hidden items-center gap-1.5 rounded-full border border-gray-200 px-3 py-1.5 text-xs font-medium sm:flex cursor-default"
-      title={full}
-    >
+    <div className="group relative hidden items-center gap-1.5 rounded-full border border-gray-200 px-3 py-1.5 text-xs font-medium sm:flex cursor-default">
       <span className="text-orange-500">₿</span>
       <span className="text-gray-700">{short}</span>
       <span className={isUp ? "text-green-600" : "text-red-500"}>
         {isUp ? "↑" : "↓"} {Math.abs(data.change24h).toFixed(1)}%
+      </span>
+      <span className="pointer-events-none absolute left-1/2 top-full mt-2 -translate-x-1/2 whitespace-nowrap rounded-lg bg-gray-900 px-3 py-1.5 text-xs font-medium text-white opacity-0 shadow-lg transition-opacity group-hover:opacity-100">
+        {full}
       </span>
     </div>
   );
