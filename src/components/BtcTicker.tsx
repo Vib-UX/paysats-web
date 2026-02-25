@@ -53,7 +53,7 @@ export function BtcTicker() {
   const isUp = data.change24h >= 0;
 
   return (
-    <div className="group relative hidden items-center gap-1.5 rounded-full border border-gray-200 px-3 py-1.5 text-xs font-medium sm:flex cursor-default">
+    <div className="group relative flex items-center gap-1 rounded-full border border-gray-200 px-2 py-1 text-[10px] font-medium sm:gap-1.5 sm:px-3 sm:py-1.5 sm:text-xs cursor-default">
       <span className="text-orange-500">₿</span>
       <span className="text-gray-700">{short}</span>
       <span className={isUp ? "text-green-600" : "text-red-500"}>
