@@ -16,7 +16,7 @@ const translations = {
     en: "Create savings goals and auto-invest into Bitcoin. DCA your IDR into BTC for each goal—start with as little as Rp 100.000.",
   },
   "hero.earlyAccess": { id: "Akses lebih awal", en: "Get early access" },
-  "hero.watchDemo": { id: "Tonton demo 30 detik", en: "Watch 30s demo" },
+  "hero.howItWorks": { id: "Cara kerjanya", en: "How it works" },
 
   // Social proof badges
   "social.badge1": { id: "Nabung di BTC Pockets", en: "Save into BTC Pockets" },

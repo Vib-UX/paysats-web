@@ -13,7 +13,7 @@ export function HowItWorks() {
   const { t } = useI18n();
 
   return (
-    <section className="py-20 sm:py-28">
+    <section id="how-it-works" className="scroll-mt-20 py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <AnimateIn animation="fade-up">
           <h2 className="font-display text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">

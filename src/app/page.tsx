@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import { I18nProvider, useI18n } from "@/lib/i18n";
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
@@ -11,18 +10,16 @@ import { WhyBtc } from "@/components/WhyBtc";
 import { BitcoinCard } from "@/components/BitcoinCard";
 import { WaitlistForm } from "@/components/WaitlistForm";
 import { Footer } from "@/components/Footer";
-import { VideoModal } from "@/components/VideoModal";
 import { AnimateIn } from "@/components/AnimateIn";
 
 function PageContent() {
-  const [videoModalOpen, setVideoModalOpen] = useState(false);
   const { t } = useI18n();
 
   return (
     <>
       <Navbar />
       <main>
-        <Hero onWatchDemo={() => setVideoModalOpen(true)} />
+        <Hero />
         <SocialProof />
         <HowItWorks />
         <BitcoinCard />
@@ -52,10 +49,6 @@ function PageContent() {
         </section>
         <Footer />
       </main>
-      <VideoModal
-        isOpen={videoModalOpen}
-        onClose={() => setVideoModalOpen(false)}
-      />
     </>
   );
 }

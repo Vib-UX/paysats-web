@@ -6,11 +6,7 @@ import { useEffect, useState } from "react";
 import { PhoneMockup } from "./PhoneMockup";
 import { VideoWithPlaceholder } from "./VideoWithPlaceholder";
 
-interface HeroProps {
-  onWatchDemo: () => void;
-}
-
-export function Hero({ onWatchDemo }: HeroProps) {
+export function Hero() {
   const [mounted, setMounted] = useState(false);
   const { t } = useI18n();
   useEffect(() => setMounted(true), []);
@@ -40,13 +36,12 @@ export function Hero({ onWatchDemo }: HeroProps) {
               >
                 {t("hero.earlyAccess")}
               </a>
-              <button
-                type="button"
-                onClick={onWatchDemo}
+              <a
+                href="#how-it-works"
                 className="rounded-full border-2 border-gray-300 bg-white px-8 py-4 text-base font-semibold text-gray-700 transition-all hover:border-arka-primary hover:bg-arka-surface hover:text-arka-primary-dark hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-arka-primary focus:ring-offset-2"
               >
-                {t("hero.watchDemo")}
-              </button>
+                {t("hero.howItWorks")}
+              </a>
             </div>
           </div>
 
