@@ -3,6 +3,7 @@
 import { ARKA_DEMO_VIDEO } from "@/lib/constants";
 import { useEffect, useState } from "react";
 import { PhoneMockup } from "./PhoneMockup";
+import { VideoWithPlaceholder } from "./VideoWithPlaceholder";
 
 interface HeroProps {
   onWatchDemo: () => void;
@@ -53,16 +54,10 @@ export function Hero({ onWatchDemo }: HeroProps) {
           <div className="relative">
             <PhoneMockup rollIn>
               {ARKA_DEMO_VIDEO ? (
-                <video
-                  className="aspect-[9/19.5] w-[170px] sm:w-[185px] object-cover"
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
+                <VideoWithPlaceholder
                   src={ARKA_DEMO_VIDEO}
-                >
-                  <track kind="captions" />
-                </video>
+                  className="aspect-[9/19.5] w-[170px] sm:w-[185px]"
+                />
               ) : (
                 <div className="aspect-[9/19.5] w-[170px] sm:w-[185px] bg-gradient-to-b from-orange-200/50 to-orange-100/30 flex items-center justify-center">
                   <p className="text-center text-sm text-orange-700 px-4">

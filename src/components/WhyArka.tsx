@@ -3,6 +3,7 @@
 import { ARKA_GOALS_VIDEO } from "@/lib/constants";
 import { AnimateIn } from "./AnimateIn";
 import { PhoneMockup } from "./PhoneMockup";
+import { VideoWithPlaceholder } from "./VideoWithPlaceholder";
 
 const benefits = [
   {
@@ -48,16 +49,10 @@ export function WhyArka() {
           <div className="mt-12 flex justify-center">
             <div className="flex flex-col items-center">
               <PhoneMockup reverse>
-                <video
+                <VideoWithPlaceholder
                   src={ARKA_GOALS_VIDEO}
-                  className="aspect-[9/19.5] w-[170px] sm:w-[185px] object-cover"
-                  autoPlay
-                  playsInline
-                  muted
-                  loop
-                >
-                  <track kind="captions" />
-                </video>
+                  className="aspect-[9/19.5] w-[170px] sm:w-[185px]"
+                />
               </PhoneMockup>
               <p className="mt-10 text-center text-sm text-gray-600">
                 Housing, wedding, retirement—create pockets for every goal.
