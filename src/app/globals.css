@@ -46,6 +46,12 @@
   animation: pulse-glow 4s ease-in-out infinite;
 }
 
+/* Carousel progress indicator */
+@keyframes progress {
+  0% { width: 0%; }
+  100% { width: 100%; }
+}
+
 /* Chingari-inspired phone mockup */
 @keyframes phone-float {
   0%, 100% {
