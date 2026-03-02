@@ -8,3 +8,5 @@ Landing page for Arka, a mobile neobank savings app for Indonesian and emerging-
 npm install
 npm run dev
 ```
+
+Runs at [http://localhost:3000](http://localhost:3000).
