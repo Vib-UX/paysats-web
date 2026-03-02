@@ -52,6 +52,18 @@
   100% { width: 100%; }
 }
 
+/* Heartbeat (double pulse) for Limited Early Access badge */
+@keyframes heartbeat {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  14% { opacity: 0.8; transform: scale(1.15); }
+  28% { opacity: 1; transform: scale(1); }
+  42% { opacity: 0.8; transform: scale(1.1); }
+  56%, 100% { opacity: 1; transform: scale(1); }
+}
+.animate-heartbeat {
+  animation: heartbeat 1.5s ease-in-out infinite;
+}
+
 /* Chingari-inspired phone mockup */
 @keyframes phone-float {
   0%, 100% {
@@ -135,4 +147,148 @@
     phone-roll-in 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards,
     phone-float 6s ease-in-out 1.2s infinite;
   transform-style: preserve-3d;
+}
+
+/* IdrDcaCalculator theming (light, matches Arka) */
+.idr-dca-calculator-wrapper {
+  --border: 1px solid #e5e7eb;
+  --text-primary: #111827;
+  --text-secondary: #374151;
+  --text-muted: #6b7280;
+  --bg-card: #ffffff;
+  --bg-control: #f9fafb;
+  --accent-indigo: #6366f1;
+  --accent-green: #10b981;
+  --accent-red: #ef4444;
+  --radius: 0.75rem;
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+}
+
+/* Prevent text overlap: allow wrapping and contain overflow */
+.idr-dca-calculator-wrapper h2,
+.idr-dca-calculator-wrapper > p {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+  hyphens: auto;
+  min-width: 0;
+}
+.idr-dca-calculator-wrapper section p {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  min-width: 0;
+}
+.idr-dca-calculator-wrapper section > div > div {
+  min-width: 0;
+}
+/* Scoreboard: prevent labels/values from overlapping – wrap instead of clip */
+.idr-dca-calculator-wrapper section > div:nth-of-type(3) > div {
+  min-width: 0;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+.idr-dca-calculator-wrapper section > div:nth-of-type(3) > div > div {
+  overflow-wrap: break-word;
+  word-break: break-word;
+  min-width: 0;
+}
+/* Scoreboard row (key + value): allow wrap on very narrow so they don’t overlap */
+.idr-dca-calculator-wrapper section > div:nth-of-type(3) > div > div > div:nth-child(n+2) {
+  flex-wrap: wrap;
+  gap: 2px 4px;
+}
+/* Chart legend: wrap on small screens so items don’t overlap */
+.idr-dca-calculator-wrapper .recharts-default-legend {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 8px 12px !important;
+  justify-content: center;
+}
+.idr-dca-calculator-wrapper .recharts-legend-item {
+  margin: 0 !important;
+}
+@media (max-width: 640px) {
+  .idr-dca-calculator-wrapper .recharts-default-legend {
+    font-size: 11px;
+  }
+}
+
+/* Embed: hide package title + first paragraph (we use our own i18n title + subtitle) */
+.idr-dca-calculator-wrapper section > h2,
+.idr-dca-calculator-wrapper section > p:first-of-type {
+  display: none !important;
+}
+
+/* Embed: no top border, less top padding so it fits inside our card */
+.idr-dca-calculator-wrapper section {
+  border-top: none !important;
+  padding-top: 0 !important;
+  padding-bottom: 8px;
+  min-width: 0; /* allow shrinking in narrow containers */
+}
+
+/* Controls: prevent label/input text overlap */
+.idr-dca-calculator-wrapper section > div:nth-of-type(1) label,
+.idr-dca-calculator-wrapper section > div:nth-of-type(1) span {
+  overflow-wrap: break-word;
+  word-break: break-word;
+  min-width: 0;
+}
+
+/* Responsive: stack controls and full-width inputs on small screens */
+@media (max-width: 640px) {
+  .idr-dca-calculator-wrapper section > div:nth-of-type(1) {
+    flex-direction: column !important;
+    gap: 16px !important;
+  }
+  .idr-dca-calculator-wrapper section > div:nth-of-type(1) > div {
+    min-width: 0 !important;
+    width: 100% !important;
+  }
+  .idr-dca-calculator-wrapper section > div:nth-of-type(1) select {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+  }
+  .idr-dca-calculator-wrapper section > div:nth-of-type(1) input[type="range"] {
+    flex: 1 !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+  .idr-dca-calculator-wrapper section > div:nth-of-type(1) > div > div {
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+  /* Slider row: keep value + slider on one line when possible, allow wrap if needed */
+  .idr-dca-calculator-wrapper section > div:nth-of-type(1) > div > div {
+    flex-wrap: wrap;
+  }
+}
+
+/* Responsive: chart container – reduce padding on mobile, contain width */
+@media (max-width: 640px) {
+  .idr-dca-calculator-wrapper section > div:nth-of-type(2) {
+    padding: 12px !important;
+  }
+  .idr-dca-calculator-wrapper section > div:nth-of-type(2) > div {
+    min-height: 240px !important;
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+}
+
+/* Responsive: scoreboard 1 column on very small screens */
+@media (max-width: 480px) {
+  .idr-dca-calculator-wrapper section > div:nth-of-type(3) {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Inflation note: compact on mobile (second p in section) */
+@media (max-width: 640px) {
+  .idr-dca-calculator-wrapper section > p:nth-of-type(2) {
+    padding: 10px 12px !important;
+    font-size: 0.85rem !important;
+  }
 }

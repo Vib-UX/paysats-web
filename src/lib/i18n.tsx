@@ -71,10 +71,17 @@ const translations = {
   "card.cta": { id: "Dapatkan akses awal kartu", en: "Get early access to the card" },
 
   // Why Arka
-  "whyArka.title": { id: "Kenapa Arka", en: "Why Arka" },
+  "whyArka.title": {
+    id: "Lebih dari sekadar aplikasi kripto biasa",
+    en: "More than just a regular crypto app",
+  },
   "whyArka.subtitle": {
     id: "DCA Rupiah ke Bitcoin untuk setiap target tabungan. Dibangun untuk penabung Indonesia yang ingin cara modern dan serba-aplikasi.",
     en: "DCA your IDR into Bitcoin for every savings goal. Built for Indonesian savers who want a modern, app-first approach.",
+  },
+  "whyArka.earlyAccessBadge": {
+    id: "Akses awal terbatas",
+    en: "Limited Early Access",
   },
   "whyArka.carousel.cta": {
     id: "Buat BTC pocket untuk setiap tujuan hidup—mulai nabung sekarang.",
@@ -86,25 +93,50 @@ const translations = {
   "whyArka.goal2.label": { id: "Pernikahan", en: "Wedding" },
   "whyArka.goal3.title": { id: "Pensiun Tenang", en: "Peaceful Retirement" },
   "whyArka.goal3.label": { id: "Pensiun", en: "Retirement" },
-  "whyArka.benefit1.title": { id: "Banyak BTC Pocket", en: "Multiple BTC Pockets" },
+  "whyArka.benefit1.title": {
+    id: "Auto DCA (Tabungan Rutin)",
+    en: "Auto DCA (Regular Savings)",
+  },
   "whyArka.benefit1.desc": {
-    id: "Rumah, pernikahan, pensiun, traveling—buat pocket khusus untuk setiap tujuan dan DCA IDR ke BTC per pocket.",
-    en: "Housing, wedding, retirement, travel—create a dedicated pocket for each goal and DCA IDR into BTC per pocket.",
+    id: "Rata-rata harga beli Bitcoin secara otomatis. Kurangi risiko gejolak harga.",
+    en: "Automatically average Bitcoin purchase prices. Reduce the risk of price fluctuations.",
   },
-  "whyArka.benefit2.title": { id: "Auto DCA", en: "Auto DCA" },
+  "whyArka.benefit2.title": { id: "Multi-pocket (Pocket)", en: "Multi-pocket (Pocket)" },
   "whyArka.benefit2.desc": {
-    id: "Atur pembelian berulang dan biarkan Arka investasi otomatis IDR ke Bitcoin. Kurangi risiko volatilitas dengan dollar-cost averaging.",
-    en: "Set recurring buys and let Arka auto-invest your IDR into Bitcoin. Smooth out volatility with dollar-cost averaging.",
+    id: "Pisahkan tabungan Bitcoin untuk tujuan berbeda: dana pernikahan, dana rumah, atau dana pensiun.",
+    en: "Separate your Bitcoin savings for different purposes: wedding funds, house funds, or retirement funds.",
   },
-  "whyArka.benefit3.title": { id: "Aman & Terverifikasi", en: "Secure & Verified" },
+  "whyArka.benefit3.title": {
+    id: "Mulai dari Rp 50.000",
+    en: "Starting from IDR 50,000",
+  },
   "whyArka.benefit3.desc": {
-    id: "Infrastruktur terverifikasi KYC dan terpercaya untuk tabungan BTC kamu. Aset kamu aman dan terlindungi.",
-    en: "KYC-verified, trusted infrastructure for your BTC savings. Your assets are safe and protected.",
+    id: "Tidak perlu modal besar. Denominasi kecil memudahkan siapa saja mulai menabung.",
+    en: "No need for large capital. Small denominations make it easy for anyone to start saving.",
   },
-  "whyArka.benefit4.title": { id: "Semua tabungan dalam satu tempat", en: "See all your savings in one place" },
+  "whyArka.benefit4.title": {
+    id: "Legal & Terdaftar",
+    en: "Legal & Regulated",
+  },
   "whyArka.benefit4.desc": {
-    id: "Satu dashboard, semua BTC pocket, progres jelas di setiap tujuan. Mulai dari Rp 100.000.",
-    en: "One dashboard, all your BTC pockets, clear progress on every goal. Start from as little as Rp 100.000.",
+    id: "Arka terdaftar resmi di Bappebti. Aset dan dana pengguna dijamin aman.",
+    en: "Arka is officially registered with Bappebti. User assets and funds are guaranteed safe.",
+  },
+  "whyArka.benefit5.title": {
+    id: "Tarik kapan saja",
+    en: "Withdraw Anytime",
+  },
+  "whyArka.benefit5.desc": {
+    id: "Tidak ada periode mengunci. Aset sepenuhnya milik kamu, dan bisa cair ke rekening bank dalam hitungan menit.",
+    en: "There's no lock-up period. The assets are completely yours, and you can cash them into your bank account in minutes.",
+  },
+  "whyArka.benefit6.title": {
+    id: "100% Transparan",
+    en: "100% Transparent",
+  },
+  "whyArka.benefit6.desc": {
+    id: "Tidak ada biaya tersembunyi. Spread dan biaya ditampilkan transparan sebelum transaksi.",
+    en: "No hidden fees. Spreads and fees are transparently displayed before a transaction.",
   },
 
   // Why BTC
@@ -128,8 +160,14 @@ const translations = {
     id: "Dengan Arka, kamu bisa DCA ke BTC mulai dari Rp 100.000 per pocket.",
     en: "With Arka, you can DCA into BTC from as little as Rp 100.000 per pocket.",
   },
-  "whyBtc.chartLabel": { id: "Riwayat harga BTC (USD)", en: "BTC price history (USD)" },
-  "whyBtc.chartYear": { id: "Tahun", en: "Year" },
+  "whyBtc.calculatorTitle": {
+    id: "Berapa yang bisa kamu dapat jika menabung di BTC?",
+    en: "How much could you have gained if you saved in BTC?",
+  },
+  "whyBtc.calculatorSubtitle": {
+    id: "Bandingkan DCA ke Bitcoin dengan deposito, IHSG, dan emas (IDR).",
+    en: "Compare DCA into Bitcoin vs time deposit, IHSG, and gold (IDR).",
+  },
   "whyBtc.disclaimer": {
     id: "Data historis bersifat perkiraan. Kinerja masa lalu tidak menjamin hasil di masa depan.",
     en: "Historical data is approximate. Past performance does not guarantee future results.",

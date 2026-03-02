@@ -27,10 +27,12 @@ const goalKeys = [
 ] as const;
 
 const benefitKeys = [
-  { title: "whyArka.benefit1.title", desc: "whyArka.benefit1.desc", icon: "🎯" },
-  { title: "whyArka.benefit2.title", desc: "whyArka.benefit2.desc", icon: "📈" },
-  { title: "whyArka.benefit3.title", desc: "whyArka.benefit3.desc", icon: "🛡️" },
-  { title: "whyArka.benefit4.title", desc: "whyArka.benefit4.desc", icon: "📊" },
+  { title: "whyArka.benefit1.title", desc: "whyArka.benefit1.desc", icon: "🔄", iconColor: "text-blue-500" },
+  { title: "whyArka.benefit2.title", desc: "whyArka.benefit2.desc", icon: "💳", iconColor: "text-pink-500" },
+  { title: "whyArka.benefit3.title", desc: "whyArka.benefit3.desc", icon: "💰", iconColor: "text-emerald-500" },
+  { title: "whyArka.benefit4.title", desc: "whyArka.benefit4.desc", icon: "🛡️", iconColor: "text-violet-500" },
+  { title: "whyArka.benefit5.title", desc: "whyArka.benefit5.desc", icon: "↔️", iconColor: "text-orange-500" },
+  { title: "whyArka.benefit6.title", desc: "whyArka.benefit6.desc", icon: "👁️", iconColor: "text-purple-500" },
 ] as const;
 
 function GoalCarousel() {
@@ -122,6 +124,19 @@ function GoalCarousel() {
   );
 }
 
+function HeartbeatBadge() {
+  const { t } = useI18n();
+  return (
+    <span className="inline-flex items-center gap-2 rounded-full bg-white/90 px-4 py-2 text-sm font-medium text-gray-800 shadow-sm ring-1 ring-gray-200/80 backdrop-blur-sm">
+      <span
+        className="inline-block h-2.5 w-2.5 shrink-0 rounded-full bg-red-500 animate-heartbeat"
+        aria-hidden
+      />
+      {t("whyArka.earlyAccessBadge")}
+    </span>
+  );
+}
+
 export function WhyArka() {
   const { t } = useI18n();
 
@@ -129,6 +144,9 @@ export function WhyArka() {
     <section className="bg-gradient-to-b from-arka-surface/50 to-white py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <AnimateIn animation="fade-up">
+          <div className="mb-4">
+            <HeartbeatBadge />
+          </div>
           <h2 className="font-display text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
             {t("whyArka.title")}
           </h2>
@@ -144,11 +162,15 @@ export function WhyArka() {
           </p>
         </AnimateIn>
 
-        <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {benefitKeys.map((benefit, i) => (
-            <AnimateIn key={benefit.title} animation="fade-up" delay={i * 100}>
+            <AnimateIn key={benefit.title} animation="fade-up" delay={i * 80}>
               <div className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm transition-all hover:border-arka-primary/30 hover:shadow-lg hover:-translate-y-1">
-                <span className="text-3xl" role="img" aria-hidden>
+                <span
+                  className={`text-2xl sm:text-3xl ${benefit.iconColor ?? ""}`}
+                  role="img"
+                  aria-hidden
+                >
                   {benefit.icon}
                 </span>
                 <h3 className="mt-4 font-display text-lg font-semibold text-gray-900">

@@ -1,0 +1,13 @@
+diff --git a/node_modules/@predator_757/bitflation-idr-dca/dist/IdrDcaCalculator.js b/node_modules/@predator_757/bitflation-idr-dca/dist/IdrDcaCalculator.js
+index 4331f7d..47c1e59 100644
+--- a/node_modules/@predator_757/bitflation-idr-dca/dist/IdrDcaCalculator.js
++++ b/node_modules/@predator_757/bitflation-idr-dca/dist/IdrDcaCalculator.js
+@@ -43,7 +43,7 @@ function formatIdr(n) {
+ export function IdrDcaCalculator() {
+     const [frequency, setFrequency] = useState('monthly');
+     const [amount, setAmount] = useState(AMOUNT_CONFIG.monthly.default);
+-    const [yearsAgo, setYearsAgo] = useState(5);
++    const [yearsAgo, setYearsAgo] = useState(6);
+     const [btcDaily, setBtcDaily] = useState([]);
+     const [ihsgDaily, setIhsgDaily] = useState([]);
+     const [goldDaily, setGoldDaily] = useState([]);

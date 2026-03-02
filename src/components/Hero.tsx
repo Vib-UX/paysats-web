@@ -32,9 +32,13 @@ export function Hero() {
             >
               <a
                 href="#waitlist"
-                className="rounded-full bg-arka-primary px-8 py-4 text-base font-semibold text-white shadow-lg shadow-arka-primary/25 transition-all hover:bg-arka-primary-dark hover:shadow-xl hover:shadow-arka-primary/30 hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-arka-primary focus:ring-offset-2"
+                className="inline-flex items-center gap-2 rounded-full bg-arka-primary px-8 py-4 text-base font-semibold text-white shadow-lg shadow-arka-primary/25 transition-all hover:bg-arka-primary-dark hover:shadow-xl hover:shadow-arka-primary/30 hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-arka-primary focus:ring-offset-2"
               >
-                {t("hero.earlyAccess")}
+                <span
+                  className="inline-block h-2.5 w-2.5 shrink-0 rounded-full bg-white animate-heartbeat"
+                  aria-hidden
+                />
+                {t("whyArka.earlyAccessBadge")}
               </a>
               <a
                 href="#how-it-works"
