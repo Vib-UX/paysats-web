@@ -19,7 +19,7 @@ export function Footer() {
         <div className="flex flex-col items-center justify-between gap-6 sm:flex-row">
           <span className="flex items-center gap-2 font-display text-lg font-bold text-gray-900">
             <Image
-              src="/images/logo.png"
+              src="/images/logo.svg"
               alt="PaySats logo"
               width={28}
               height={28}

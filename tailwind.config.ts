@@ -10,11 +10,12 @@ const config: Config = {
     extend: {
       colors: {
         paysats: {
-          primary: "#F07E63",
-          "primary-dark": "#E86548",
+          // Matches app.paysats.exchange terracotta brand gradient
+          primary: "#CC7D48",
+          "primary-dark": "#A84E2E",
           secondary: "#6366F1",
-          accent: "#FBBF24",
-          surface: "#FFF7ED",
+          accent: "#DCA060",
+          surface: "#F7F3EF",
         },
       },
       fontFamily: {

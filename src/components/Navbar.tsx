@@ -14,7 +14,7 @@ export function Navbar() {
         <div className="flex items-center gap-4">
           <a href="#" className="flex items-center gap-2 font-display text-xl font-bold text-gray-900">
             <Image
-              src="/images/logo.png"
+              src="/images/logo.svg"
               alt="PaySats logo"
               width={32}
               height={32}
