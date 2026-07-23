@@ -30,8 +30,12 @@ export function Navbar() {
           <button
             type="button"
             onClick={toggleLocale}
-            className="rounded-full border border-gray-200 px-3 py-1.5 text-xs font-semibold text-gray-600 transition-all hover:border-gray-400 hover:text-gray-900"
-            aria-label="Switch language"
+            className="rounded-full border border-gray-200 px-3 py-1.5 text-xs font-semibold text-gray-700 transition-all hover:border-gray-400 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-paysats-primary focus:ring-offset-2"
+            aria-label={
+              locale === "id"
+                ? "Switch language to English"
+                : "Ganti bahasa ke Bahasa Indonesia"
+            }
           >
             {locale === "id" ? "EN" : "ID"}
           </button>

@@ -8,7 +8,15 @@ import { useI18n } from "@/lib/i18n";
 export function Footer() {
   const { t } = useI18n();
 
-  const links = [
+  const productLinks = [
+    { href: "/loans", label: t("hub.loans.title") },
+    { href: "/dca-calculator", label: t("hub.dca.title") },
+    { href: "/bitcoin-card", label: t("hub.card.title") },
+    { href: "/bitcoin-indonesia", label: t("hubPage.title") },
+    { href: "/blog", label: t("blog.badge") },
+  ];
+
+  const legalLinks = [
     { href: "/privacy", label: t("footer.privacy") },
     { href: "/terms", label: t("footer.terms") },
     { href: "https://x.com/paysats_", label: "X / Twitter", external: true },
@@ -18,7 +26,7 @@ export function Footer() {
   return (
     <footer className="border-t border-gray-200 bg-gray-50 py-12">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col items-center justify-between gap-6 sm:flex-row">
+        <div className="flex flex-col gap-8 lg:flex-row lg:items-start lg:justify-between">
           <span className="flex items-center gap-2 font-display text-lg font-bold text-gray-900">
             <Image
               src="/images/logo.svg"
@@ -29,15 +37,26 @@ export function Footer() {
             />
             PaySats
           </span>
-          <nav className="flex flex-wrap justify-center gap-6">
-            {links.map((link) =>
-              link.external ? (
+          <nav aria-label="Product" className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-x-6 sm:gap-y-2">
+            {productLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="text-sm text-gray-600 hover:text-paysats-primary transition focus:outline-none focus:ring-2 focus:ring-paysats-primary focus:ring-offset-2 rounded"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </nav>
+          <nav aria-label="Legal and social" className="flex flex-wrap gap-6">
+            {legalLinks.map((link) =>
+              "external" in link && link.external ? (
                 <a
                   key={link.label}
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm text-gray-600 hover:text-paysats-primary transition"
+                  className="text-sm text-gray-600 hover:text-paysats-primary transition focus:outline-none focus:ring-2 focus:ring-paysats-primary focus:ring-offset-2 rounded"
                 >
                   {link.label}
                 </a>
@@ -45,7 +64,7 @@ export function Footer() {
                 <Link
                   key={link.label}
                   href={link.href}
-                  className="text-sm text-gray-600 hover:text-paysats-primary transition"
+                  className="text-sm text-gray-600 hover:text-paysats-primary transition focus:outline-none focus:ring-2 focus:ring-paysats-primary focus:ring-offset-2 rounded"
                 >
                   {link.label}
                 </Link>

@@ -1,0 +1,14 @@
+# PaySats Google Disavow file
+# Upload this file in Google Search Console → Settings → Disavow links
+# (do NOT host this publicly as a crawl target — keep in repo/ops only)
+#
+# Format:
+#   domain:spammy-site.com
+#   https://spammy-site.com/bad-page
+#
+# Replace the placeholders below with toxic referring domains from your
+# backlink audit, then submit. Re-upload after major cleanup rounds.
+#
+# Examples (REMOVE and replace with real toxic domains):
+# domain:example-pbnn-spam.com
+# domain:low-quality-directory.xyz

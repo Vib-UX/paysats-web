@@ -11,65 +11,6 @@ import { useEffect, useState } from "react";
 import { PhoneMockup } from "./PhoneMockup";
 import { VideoWithPlaceholder } from "./VideoWithPlaceholder";
 
-const CURRENCIES = [
-  "Rupiah",
-  "Baht",
-  "Ringgit",
-  "Peso",
-  "Dong",
-  "Kip",
-  "Rupee",
-  "Ngultrum",
-  "Taka",
-] as const;
-
-const HOLD_MS = 1900;
-const HOLD_RUPIAH_MS = 3200;
-const EXIT_MS = 320;
-
-function RotatingCurrency() {
-  const [index, setIndex] = useState(0);
-  const [phase, setPhase] = useState<"in" | "out">("in");
-  const [reduced, setReduced] = useState(false);
-
-  useEffect(() => {
-    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
-    setReduced(mq.matches);
-    const onChange = (e: MediaQueryListEvent) => setReduced(e.matches);
-    mq.addEventListener("change", onChange);
-    return () => mq.removeEventListener("change", onChange);
-  }, []);
-
-  useEffect(() => {
-    if (reduced) return;
-    const hold = index === 0 ? HOLD_RUPIAH_MS : HOLD_MS;
-    const id = setTimeout(() => setPhase("out"), hold);
-    return () => clearTimeout(id);
-  }, [index, reduced]);
-
-  useEffect(() => {
-    if (phase !== "out") return;
-    const id = setTimeout(() => {
-      setIndex((i) => (i + 1) % CURRENCIES.length);
-      setPhase("in");
-    }, EXIT_MS);
-    return () => clearTimeout(id);
-  }, [phase]);
-
-  if (reduced) {
-    return <span className="text-paysats-primary">{CURRENCIES[0]}</span>;
-  }
-
-  return (
-    <span
-      key={index}
-      className={`inline-block text-paysats-primary ${phase === "out" ? "currency-out" : "currency-in"}`}
-    >
-      {CURRENCIES[index]}
-    </span>
-  );
-}
-
 export function Hero() {
   const [mounted, setMounted] = useState(false);
   const { t } = useI18n();
@@ -84,8 +25,7 @@ export function Hero() {
               className={`font-display text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl lg:text-6xl transition-all duration-700 ease-out ${mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
             >
               {t("hero.title1")}
-              {t("hero.titleVerb")}
-              <RotatingCurrency />
+              <span className="text-paysats-primary">{t("hero.titleVerb")}</span>
             </h1>
             <p
               className={`mt-5 text-lg leading-relaxed text-gray-600 sm:text-xl transition-all duration-700 ease-out delay-150 ${mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
@@ -133,8 +73,8 @@ export function Hero() {
               )}
             </PhoneMockup>
 
-            <div className="absolute -right-8 -top-8 h-32 w-32 rounded-full bg-paysats-accent/20 blur-3xl animate-pulse-glow" />
-            <div className="absolute -bottom-8 -left-8 h-40 w-40 rounded-full bg-paysats-primary/15 blur-3xl animate-pulse-glow" style={{ animationDelay: "2s" }} />
+            <div className="absolute -right-8 -top-8 h-32 w-32 rounded-full bg-paysats-accent/20 blur-3xl animate-pulse-glow" aria-hidden />
+            <div className="absolute -bottom-8 -left-8 h-40 w-40 rounded-full bg-paysats-primary/15 blur-3xl animate-pulse-glow" style={{ animationDelay: "2s" }} aria-hidden />
           </div>
         </div>
       </div>

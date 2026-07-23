@@ -1,36 +1,25 @@
-"use client";
+import {
+  faqPageSchema,
+  financialProductCardSchema,
+  financialProductDcaSchema,
+  financialProductLoanSchema,
+  homeFaqs,
+} from "@/lib/seo";
+import { JsonLd } from "@/components/JsonLd";
+import { HomePage } from "@/components/HomePage";
 
-import { I18nProvider } from "@/lib/i18n";
-import { Navbar } from "@/components/Navbar";
-import { Hero } from "@/components/Hero";
-import { SocialProof } from "@/components/SocialProof";
-import { HowItWorks } from "@/components/HowItWorks";
-import { WhyPaySats } from "@/components/WhyPaySats";
-import { WhyBtc } from "@/components/WhyBtc";
-import { BitcoinCard } from "@/components/BitcoinCard";
-import { Footer } from "@/components/Footer";
-
-function PageContent() {
+export default function Page() {
   return (
     <>
-      <Navbar />
-      <main>
-        <Hero />
-        <SocialProof />
-        <HowItWorks />
-        <BitcoinCard />
-        <WhyPaySats />
-        <WhyBtc />
-        <Footer />
-      </main>
+      <JsonLd
+        data={[
+          financialProductLoanSchema(),
+          financialProductDcaSchema(),
+          financialProductCardSchema(),
+          faqPageSchema(homeFaqs),
+        ]}
+      />
+      <HomePage />
     </>
-  );
-}
-
-export default function HomePage() {
-  return (
-    <I18nProvider>
-      <PageContent />
-    </I18nProvider>
   );
 }

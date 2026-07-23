@@ -54,14 +54,14 @@ export function VideoWithPlaceholder({
         muted={muted}
         loop={loop}
         playsInline={playsInline}
-        preload="auto"
+        preload="metadata"
         src={src}
         onLoadedData={() => {
           if (videoRef.current) videoRef.current.playbackRate = playbackRate;
           setReady(true);
         }}
       >
-        <track kind="captions" />
+        <track kind="captions" srcLang="en" label="English" />
       </video>
     </div>
   );

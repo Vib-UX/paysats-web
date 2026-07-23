@@ -80,8 +80,10 @@ function GoalCarousel() {
               src={goal.src}
               alt={goal.alt}
               fill
+              sizes="(max-width: 768px) 100vw, 768px"
               className="object-cover"
               priority={i === 0}
+              loading={i === 0 ? "eager" : "lazy"}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
             <div

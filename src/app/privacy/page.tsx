@@ -3,10 +3,17 @@ import { LegalPage } from "@/components/LegalPage";
 import { privacyContent } from "@/lib/legal";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy – PaySats",
+  title: "Privacy Policy",
   description:
-    "How PaySats collects, uses, and protects your information. PaySats is a self-custody, on-chain protocol built to hold as little of your data as possible.",
+    "How PaySats collects, uses, and protects your information. Self-custody protocol that holds as little data as possible.",
   alternates: { canonical: "/privacy" },
+  openGraph: {
+    title: "Privacy Policy | PaySats",
+    description:
+      "How PaySats collects, uses, and protects your information. Self-custody protocol that holds as little data as possible.",
+    url: "/privacy",
+    type: "website",
+  },
 };
 
 export default function PrivacyPage() {

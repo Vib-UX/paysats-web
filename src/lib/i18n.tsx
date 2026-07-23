@@ -8,14 +8,21 @@ const translations = {
   // Navbar
   "nav.joinWaitlist": { id: "Mulai nabung", en: "Start saving" },
 
-  // Hero
-  "hero.title1": { id: "Nabung Bitcoin, ", en: "Save in Bitcoin, " },
-  "hero.titleVerb": { id: "pinjam ", en: "borrow " },
+  // Hero — Indonesia / Rupiah focused (no rotating foreign currencies)
+  "hero.title1": {
+    id: "Tabungan Bitcoin Indonesia — ",
+    en: "Bitcoin Savings Indonesia — ",
+  },
+  "hero.titleVerb": {
+    id: "Pinjam Rupiah dengan Jaminan Bitcoin",
+    en: "Borrow Rupiah Against Bitcoin",
+  },
   "hero.subtitle": {
     id: "DCA otomatis ke Bitcoin, lalu pinjam Rupiah langsung ke rekening bank atau e-wallet dengan jaminan BTC kamu, tanpa pernah menjual. Kustodi mandiri, didukung DeFi, mulai dari Rp 25.000.",
     en: "Auto-DCA into Bitcoin, then borrow Rupiah straight to your bank account or e-wallet against your BTC, without ever selling. Self-custody, DeFi-powered, from just Rp 25,000.",
   },
   "hero.howItWorks": { id: "Cara kerjanya", en: "How it works" },
+  "hero.faqTitle": { id: "Pertanyaan umum", en: "Frequently asked questions" },
 
   // Social proof
   "social.tagline": {
@@ -204,11 +211,132 @@ const translations = {
   },
 
   // Metadata
-  "meta.title": { id: "PaySats – Nabung Bitcoin, Pinjam Rupiah", en: "PaySats – Save in Bitcoin, Borrow in Rupiah" },
-  "meta.description": {
-    id: "PaySats: DCA otomatis ke Bitcoin, lalu pinjam Rupiah langsung ke rekening bank atau e-wallet dengan jaminan BTC, tanpa pernah menjual. Kustodi mandiri, biaya sangat kecil, mulai dari Rp 25.000.",
-    en: "PaySats: auto-DCA into Bitcoin, then borrow Rupiah straight to your bank or e-wallet against your BTC, without ever selling. Self-custody, negligible fees, from Rp 25,000.",
+  "meta.title": {
+    id: "Pinjam Rupiah dengan Jaminan Bitcoin | Tabungan Bitcoin Indonesia – PaySats",
+    en: "Borrow Rupiah Against Bitcoin | Bitcoin Savings Indonesia – PaySats",
   },
+  "meta.description": {
+    id: "Pinjam Rupiah dengan jaminan Bitcoin tanpa menjual. Tabungan & DCA Bitcoin Indonesia dari Rp 25.000. Kustodi mandiri, didukung DeFi.",
+    en: "Borrow Rupiah against Bitcoin without selling. Bitcoin savings & auto-DCA for Indonesia from Rp 25,000. Self-custody, DeFi-powered.",
+  },
+
+  // Content hub / internal links
+  "hub.related": {
+    id: "Jelajahi tabungan Bitcoin & pinjaman di Indonesia",
+    en: "Explore Bitcoin savings & loans in Indonesia",
+  },
+  "hub.loans.title": {
+    id: "Pinjam Rupiah dengan Jaminan Bitcoin",
+    en: "Borrow Rupiah Against Bitcoin",
+  },
+  "hub.loans.desc": {
+    id: "Cairkan Rupiah ke bank atau e-wallet tanpa menjual BTC kamu.",
+    en: "Unlock Rupiah to your bank or e-wallet without selling your BTC.",
+  },
+  "hub.dca.title": {
+    id: "Kalkulator Bitcoin DCA Indonesia",
+    en: "Bitcoin DCA Calculator Indonesia",
+  },
+  "hub.dca.desc": {
+    id: "Simulasikan DCA ke BTC vs deposito, IHSG, dan emas (IDR).",
+    en: "Simulate BTC DCA vs deposits, IHSG, and gold in IDR.",
+  },
+  "hub.card.title": {
+    id: "Kartu Bitcoin PaySats",
+    en: "PaySats Bitcoin Card",
+  },
+  "hub.card.desc": {
+    id: "Belanja pakai tabungan BTC, settle dalam Rupiah.",
+    en: "Spend BTC savings, settle in Rupiah.",
+  },
+  "hub.blog.title": {
+    id: "Panduan DCA & pinjaman crypto",
+    en: "DCA & crypto lending guides",
+  },
+  "hub.blog.desc": {
+    id: "Artikel Bahasa Indonesia untuk intent pencarian Bitcoin & pinjaman.",
+    en: "Indonesian-focused guides for Bitcoin DCA and lending search intent.",
+  },
+
+  // Loans page
+  "loans.badge": { id: "Pinjaman jaminan BTC", en: "BTC-backed loans" },
+  "loans.title": {
+    id: "Pinjam Rupiah dengan Jaminan Bitcoin",
+    en: "Borrow Rupiah Against Bitcoin",
+  },
+  "loans.subtitle": {
+    id: "Butuh likuiditas Rupiah tanpa menjual sats? Pinjam terhadap BTC kamu dan terima dana di rekening bank atau e-wallet Indonesia. Kustodi mandiri, didukung DeFi.",
+    en: "Need Rupiah liquidity without selling your sats? Borrow against your BTC and receive funds in your Indonesian bank or e-wallet. Self-custody, DeFi-powered.",
+  },
+  "loans.cta": { id: "Mulai tabungan Bitcoin", en: "Start Bitcoin savings" },
+  "loans.point1.title": { id: "Tanpa menjual Bitcoin", en: "No need to sell Bitcoin" },
+  "loans.point1.desc": {
+    id: "Tetap hold BTC jangka panjang sambil cairkan Rupiah untuk kebutuhan sehari-hari.",
+    en: "Keep long-term BTC exposure while unlocking Rupiah for everyday needs.",
+  },
+  "loans.point2.title": { id: "Langsung ke bank / e-wallet", en: "Straight to bank / e-wallet" },
+  "loans.point2.desc": {
+    id: "Dana Rupiah dikirim ke rekening atau e-wallet Indonesia kamu.",
+    en: "Rupiah funds go to your Indonesian bank account or e-wallet.",
+  },
+  "loans.point3.title": { id: "Dibangun di atas tabungan DCA", en: "Built on your DCA savings" },
+  "loans.point3.desc": {
+    id: "Akumulasi BTC dulu dari Rp 25.000, lalu pinjam saat butuh likuiditas.",
+    en: "Stack BTC from Rp 25,000 first, then borrow when you need liquidity.",
+  },
+  "loans.faqTitle": {
+    id: "FAQ pinjaman jaminan Bitcoin",
+    en: "BTC-backed loan FAQ",
+  },
+
+  // DCA calculator page
+  "dcaPage.badge": { id: "Bitcoin DCA Indonesia", en: "Bitcoin DCA Indonesia" },
+  "dcaPage.title": {
+    id: "Kalkulator Bitcoin DCA & FAQ untuk Penabung Indonesia",
+    en: "Bitcoin DCA Calculator & FAQ for Indonesian Savers",
+  },
+  "dcaPage.subtitle": {
+    id: "Bandingkan DCA Bitcoin dengan deposito, IHSG, dan emas dalam Rupiah. Cocok untuk pencarian jangka panjang seperti tabungan Bitcoin dan DCA bulanan.",
+    en: "Compare Bitcoin DCA with deposits, IHSG, and gold in Rupiah. Built for long-tail queries around Bitcoin savings and monthly DCA.",
+  },
+  "dcaPage.faqTitle": {
+    id: "FAQ Bitcoin DCA Indonesia",
+    en: "Bitcoin DCA Indonesia FAQ",
+  },
+
+  // Bitcoin card page
+  "cardPage.badge": { id: "Segera hadir", en: "Coming soon" },
+  "cardPage.faqTitle": {
+    id: "FAQ Kartu Bitcoin",
+    en: "Bitcoin Card FAQ",
+  },
+
+  // Hub page
+  "hubPage.badge": {
+    id: "Pusat konten PaySats",
+    en: "PaySats content hub",
+  },
+  "hubPage.title": {
+    id: "Bitcoin DCA & Pinjaman Jaminan BTC di Indonesia",
+    en: "Bitcoin DCA & BTC-Backed Loans in Indonesia",
+  },
+  "hubPage.subtitle": {
+    id: "Satu tempat untuk memahami tabungan Bitcoin, kalkulator DCA, pinjam Rupiah dengan jaminan BTC, dan kartu Bitcoin PaySats.",
+    en: "One place to learn Bitcoin savings, the DCA calculator, borrowing Rupiah against BTC, and the PaySats Bitcoin Card.",
+  },
+
+  // Blog
+  "blog.badge": { id: "Blog PaySats", en: "PaySats Blog" },
+  "blog.title": {
+    id: "Bitcoin DCA & Pinjaman Crypto untuk Indonesia",
+    en: "Bitcoin DCA & Crypto Lending for Indonesia",
+  },
+  "blog.subtitle": {
+    id: "Artikel yang menargetkan intent pencarian Bahasa Indonesia seputar DCA Bitcoin dan pinjam Rupiah dengan jaminan BTC.",
+    en: "Articles targeting Indonesian search intent around Bitcoin DCA and borrowing Rupiah against BTC.",
+  },
+  "blog.readMore": { id: "Baca selengkapnya", en: "Read more" },
+  "blog.back": { id: "Kembali ke blog", en: "Back to blog" },
 } as const;
 
 type TranslationKey = keyof typeof translations;
@@ -222,7 +350,8 @@ interface I18nContextValue {
 const I18nContext = createContext<I18nContextValue | null>(null);
 
 export function I18nProvider({ children }: { children: ReactNode }) {
-  const [locale, setLocale] = useState<Locale>("en");
+  /** Default ID to match Indonesia search / content strategy */
+  const [locale, setLocale] = useState<Locale>("id");
 
   const toggleLocale = useCallback(
     () => setLocale((prev) => (prev === "id" ? "en" : "id")),

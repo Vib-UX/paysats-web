@@ -5,7 +5,7 @@ import { APP_URL } from "@/lib/constants";
 import { useI18n } from "@/lib/i18n";
 import { AnimateIn } from "./AnimateIn";
 
-export function BitcoinCard() {
+export function BitcoinCard({ hideIntro = false }: { hideIntro?: boolean }) {
   const { t } = useI18n();
 
   return (
@@ -19,25 +19,28 @@ export function BitcoinCard() {
                 alt="PaySats Bitcoin Card with app screens showing BTC wallet, savings balance, and Bitcoin price chart"
                 width={1024}
                 height={576}
+                sizes="(max-width: 1024px) 100vw, 512px"
                 className="w-full rounded-xl animate-float-slow"
-                priority={false}
+                loading="lazy"
               />
-              <div className="absolute -bottom-6 -right-6 h-40 w-40 rounded-full bg-paysats-primary/10 animate-pulse-glow blur-2xl" />
-              <div className="absolute -top-6 -left-6 h-32 w-32 rounded-full bg-paysats-accent/15 animate-pulse-glow blur-2xl" style={{ animationDelay: "2s" }} />
+              <div className="absolute -bottom-6 -right-6 h-40 w-40 rounded-full bg-paysats-primary/10 animate-pulse-glow blur-2xl" aria-hidden />
+              <div className="absolute -top-6 -left-6 h-32 w-32 rounded-full bg-paysats-accent/15 animate-pulse-glow blur-2xl" style={{ animationDelay: "2s" }} aria-hidden />
             </div>
           </AnimateIn>
           <div className="order-1 lg:order-2">
-            <AnimateIn animation="fade-up">
-              <span className="inline-block rounded-full bg-paysats-primary/10 px-4 py-1.5 text-sm font-semibold text-paysats-primary-dark">
-                {t("card.soon")}
-              </span>
-              <h2 className="mt-4 font-display text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-                {t("card.title")}
-              </h2>
-              <p className="mt-4 text-xl text-gray-600">
-                {t("card.subtitle")}
-              </p>
-            </AnimateIn>
+            {!hideIntro && (
+              <AnimateIn animation="fade-up">
+                <span className="inline-block rounded-full bg-paysats-primary/10 px-4 py-1.5 text-sm font-semibold text-paysats-primary-dark">
+                  {t("card.soon")}
+                </span>
+                <h2 className="mt-4 font-display text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+                  {t("card.title")}
+                </h2>
+                <p className="mt-4 text-xl text-gray-600">
+                  {t("card.subtitle")}
+                </p>
+              </AnimateIn>
+            )}
             <AnimateIn animation="fade-up" delay={200}>
               <ul className="mt-8 space-y-4">
                 <li className="flex items-start gap-3">
