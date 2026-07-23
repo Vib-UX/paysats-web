@@ -8,15 +8,9 @@ const translations = {
   // Navbar
   "nav.joinWaitlist": { id: "Mulai nabung", en: "Start saving" },
 
-  // Hero — Indonesia / Rupiah focused (no rotating foreign currencies)
-  "hero.title1": {
-    id: "Tabungan Bitcoin Indonesia — ",
-    en: "Bitcoin Savings Indonesia — ",
-  },
-  "hero.titleVerb": {
-    id: "Pinjam Rupiah dengan Jaminan Bitcoin",
-    en: "Borrow Rupiah Against Bitcoin",
-  },
+  // Hero — rotating currency after "borrow" / "pinjam"
+  "hero.title1": { id: "Nabung Bitcoin, ", en: "Save in Bitcoin, " },
+  "hero.titleVerb": { id: "pinjam ", en: "borrow " },
   "hero.subtitle": {
     id: "DCA otomatis ke Bitcoin, lalu pinjam Rupiah langsung ke rekening bank atau e-wallet dengan jaminan BTC kamu, tanpa pernah menjual. Kustodi mandiri, didukung DeFi, mulai dari Rp 25.000.",
     en: "Auto-DCA into Bitcoin, then borrow Rupiah straight to your bank account or e-wallet against your BTC, without ever selling. Self-custody, DeFi-powered, from just Rp 25,000.",

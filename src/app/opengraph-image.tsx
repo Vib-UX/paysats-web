@@ -1,60 +1,16 @@
 import { ImageResponse } from "next/og";
+import { readFile } from "node:fs/promises";
+import { join } from "node:path";
 
-export const runtime = "edge";
 export const alt = "PaySats – Borrow Rupiah Against Bitcoin | Bitcoin Savings Indonesia";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
-/** PaySats mark: two bars + center dot on copper gradient */
-function PaySatsMark({ sizePx = 56 }: { sizePx?: number }) {
-  const barW = Math.round(sizePx * 0.17);
-  const barH = Math.round(sizePx * 0.64);
-  const barR = Math.round(barW / 2);
-  const gap = Math.round(sizePx * 0.18);
-  const dot = Math.round(sizePx * 0.18);
+export default async function OpenGraphImage() {
+  // Use app icon (squircle mark only — public/images/logo.png has a black canvas)
+  const logoData = await readFile(join(process.cwd(), "src/app/icon.png"));
+  const logoSrc = `data:image/png;base64,${logoData.toString("base64")}`;
 
-  return (
-    <div
-      style={{
-        width: sizePx,
-        height: sizePx,
-        borderRadius: Math.round(sizePx * 0.22),
-        background: "linear-gradient(135deg, #be6640 0%, #d08850 55%, #dca060 100%)",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        gap,
-      }}
-    >
-      <div
-        style={{
-          width: barW,
-          height: barH,
-          borderRadius: barR,
-          background: "white",
-        }}
-      />
-      <div
-        style={{
-          width: dot,
-          height: dot,
-          borderRadius: 999,
-          background: "white",
-        }}
-      />
-      <div
-        style={{
-          width: barW,
-          height: barH,
-          borderRadius: barR,
-          background: "white",
-        }}
-      />
-    </div>
-  );
-}
-
-export default function OpenGraphImage() {
   return new ImageResponse(
     (
       <div
@@ -70,7 +26,14 @@ export default function OpenGraphImage() {
         }}
       >
         <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
-          <PaySatsMark sizePx={56} />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={logoSrc}
+            width={64}
+            height={64}
+            alt="PaySats"
+            style={{ borderRadius: 14 }}
+          />
           <span style={{ fontSize: 36, fontWeight: 700, color: "#111827" }}>
             PaySats
           </span>
